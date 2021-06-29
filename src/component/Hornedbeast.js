@@ -7,7 +7,8 @@ class Hornedbeast extends React.Component{
    constructor(props){
        super(props);
        this.state={
-           numberOflikes:0
+           numberOflikes:0,
+           show:false,
        }
    }
    increseNoflikes =()=>{
@@ -15,10 +16,11 @@ class Hornedbeast extends React.Component{
         numberOflikes : this.state.numberOflikes +1
        })
    }
+  
    render(){
        return(
         <Card style={{ width: '18rem' }}>
-        <Card.Img onClick={this.increseNoflikes} variant="top" src={this.props.url} alt={this.props.title} />
+        <Card.Img  variant="top"  src={this.props.url} alt={this.props.title} onClick={this.renderModal} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>
@@ -27,6 +29,7 @@ class Hornedbeast extends React.Component{
           <Card.Text>
               Num of likes : {this.state.numberOflikes}
           </Card.Text>
+          <Button onClick={this.increseNoflikes}                   />
         </Card.Body>
       </Card>
        )
