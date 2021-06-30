@@ -17,7 +17,9 @@ class Hornedbeast extends React.Component{
    }
    render(){
        return(
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem',display: 'inline-flex',flex: 1
+
+    }}>
         <Card.Img onClick={this.increseNoflikes} variant="top" src={this.props.url} alt={this.props.title} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
