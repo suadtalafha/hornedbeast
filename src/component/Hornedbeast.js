@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
+import {Card ,Button}from 'react-bootstrap/';
+
 
 
 class Hornedbeast extends React.Component{
@@ -16,10 +17,14 @@ class Hornedbeast extends React.Component{
         numberOflikes : this.state.numberOflikes +1
        })
    }
+   
+   renderModal=() =>{
+    this.props.renderModal(this.props.title)
+}
   
    render(){
        return(
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem',display: 'inline-flex',flex: 1 }}>
         <Card.Img  variant="top"  src={this.props.url} alt={this.props.title} onClick={this.renderModal} />
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
@@ -29,7 +34,12 @@ class Hornedbeast extends React.Component{
           <Card.Text>
               Num of likes : {this.state.numberOflikes}
           </Card.Text>
-          <Button onClick={this.increseNoflikes}                   />
+          <Button onClick={this.increseNoflikes}            >
+              Likes
+          </Button>
+          <Button onClick={this.renderModal}           >
+              More details
+          </Button>
         </Card.Body>
       </Card>
        )
