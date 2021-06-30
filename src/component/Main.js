@@ -4,6 +4,10 @@ import Horned from './Horned.json'
 
 
 class Main extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
     render(){
         return(
             <div>
